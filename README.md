@@ -1,60 +1,71 @@
-DAG Exchange 2016 Checker GUI - FA-IT Consulting
+# DAG Exchange 2016 Checker GUI - FA-IT Consulting
 
-Description
+## ✨ Description
+This PowerShell project provides a GUI for checking the state of a DAG (Database Availability Group) in Exchange Server 2016. It enables:
 
-Ce projet PowerShell fournit une interface graphique (GUI) permettant de vérifier l'état d'un DAG (Database Availability Group) Exchange Server 2016. Il permet :
+- Display of DAG members
+- Listing of database copies and their statuses (CopyQueueLength, ReplayQueueLength, ContentIndexState)
+- Testing replication health with `Test-ReplicationHealth`
+- Auto-generating a detailed HTML report for documentation or auditing purposes
 
-D'afficher les membres du DAG.
+> Created by FA-IT Consulting for simplifying Exchange monitoring and health validation.
 
-De lister les copies de bases de données avec leurs statuts (CopyQueueLength, ReplayQueueLength, ContentIndexState).
+---
 
-De tester la santé de la réplication avec Test-ReplicationHealth.
+## 🚀 Launch
 
-De générer automatiquement un rapport HTML technique prêt à l'impression ou à la conversion en PDF.
+1. Open a PowerShell session as Administrator.
+2. Run the main script:
 
-Projet développé par FA-IT Consulting pour la supervision simplifiée d’environnements Exchange.
+```powershell
+.\Check-DAG-GUI.ps1
+```
 
-🚀 Lancement
+3. The interface will open. Click “Run Check” to start.
 
-1.Ouvrir une session PowerShell en tant qu'administrateur.
+---
 
-2.Exécuter le script principal : .\Check-DAG-GUI.ps1
+## 📃 HTML Report
 
-3.Une interface s'ouvre. Cliquez sur "Lancer la vérification" pour démarrer l'analyse.
+- An HTML report will be generated in `C:\Logs\DAG_Report_yyyyMMdd_HHmmss.html`.
+- It includes DAG members, copies, and replication health.
+- You can convert it to PDF with [wkhtmltopdf](https://wkhtmltopdf.org/).
 
-📃 Rapport HTML
+---
 
-Un fichier HTML est automatiquement généré dans C:\Logs\DAG_Report_yyyyMMdd_HHmmss.html.
+## ⚖️ Prerequisites
 
-Il contient : DAG, membres, copies, santé réplication.
+- PowerShell 5.1+
+- Exchange Admin rights
+- Exchange Management Shell access
+- A `C:\Logs` folder created if it doesn’t exist
 
-Peut être converti en PDF avec wkhtmltopdf.
+---
 
-⚖️ Prérequis
+## 🌐 HTML → PDF Conversion (optional)
 
-PowerShell 5.1+
+If wkhtmltopdf is installed:
 
-Droits d’administration Exchange
+```powershell
+& "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe" "C:\Logs\DAG_Report_*.html" "C:\Logs\DAG_Report.pdf"
+```
 
-Accès à la console Exchange Management Shell
+---
 
-Création du dossier C:\Logs si absent
+## 💡 Tips
 
-🌐 Conversion HTML → PDF (optionnelle)
+- You can modify the title or add your own logo in the HTML `<head>`.
+- Can be integrated into RMM/NOC internal solutions.
 
-Si wkhtmltopdf est installé : & "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe" "C:\Logs\DAG_Report_*.html" "C:\Logs\DAG_Report.pdf"
+---
 
-💡 Astuce de personnalisation
+## 🌍 Useful Links
 
-Tu peux modifier le titre ou ajouter un logo FA-IT dans la balise HTML head.
+- [Exchange DAG Documentation](https://learn.microsoft.com/en-us/exchange/high-availability/database-availability-groups/database-availability-groups?view=exchserver-2016)
+- [FA-IT Consulting on LinkedIn](https://www.linkedin.com/company/fa-it-consulting/)
 
-Compatible avec une intégration dans des solutions RMM/NOC internes.
+---
 
-🌐 Liens utiles
+## © FA-IT Consulting 2025
 
-Documentation officielle DAG Exchange
-FA-IT Consulting
-
-© FA-IT Consulting 2025
-
-Toute utilisation ou redistribution commerciale sans accord explicite est interdite.
+Commercial redistribution without permission is prohibited.
