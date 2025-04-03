@@ -1,3 +1,6 @@
+
+![Screenshot of DAG Checker](./A_digital_screenshot_displays_the_user_interface_o.png)
+
 # DAG Exchange 2016 Checker GUI - FA-IT Consulting
 
 ## ✨ Description
